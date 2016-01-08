@@ -17,7 +17,7 @@ function processTextExponential(text) {
 	// Initialization settings
 	settings = {
 		initSize: 25,
-		sizeRatio: 0.987
+		sizeRatio: 0.995
 	}
 	
 	newText = ""
