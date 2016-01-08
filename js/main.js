@@ -17,7 +17,7 @@ function processTextExponential(text) {
 	// Initialization settings
 	settings = {
 		initSize: 25,
-		sizeRatio: 0.995
+		sizeRatio: 0.999
 	}
 	
 	newText = ""
@@ -43,17 +43,17 @@ function processTextInversePower(text) {
 	// Initialization settings
 	settings = {
 		initSize: 25,
-		shrinkRate: 0.02,
-		power: 1
+		shrinkRate: 0.002,
+		power: -1
 	}
 	
 	newText = ""
-	currSize = settings.initSize
 	for(var i=0; i<text.length; i++) {
 		currChar = text.charAt(i)
-		effCurrSize = settings.initSize
+		currSizeRatio = Math.pow(settings.shrinkRate*i + 1, settings.power)
+		currSize = settings.initSize * currSizeRatio
 		
-		newText += '<span style="font-size:'+String(effCurrSize)+'">'
+		newText += '<span style="font-size:'+String(currSize)+'">'
 		newText += currChar
 		newText += "</span>"
 		
